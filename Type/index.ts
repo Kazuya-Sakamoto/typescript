@@ -54,6 +54,7 @@ let anything: any = true;
 anything = 'hello';
 anything = ['hello', 33, true];
 anything = {};
+anything.value = 'value';
 let banana = 'banana'; //? stringにも入っちゃう...
 banana = anything; 
 

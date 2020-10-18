@@ -38,5 +38,28 @@ var CoffeeSize;
 })(CoffeeSize || (CoffeeSize = {}));
 var coffee = {
     hot: true,
-    size: coffeeSize.TALL
+    size: CoffeeSize.TALL
+};
+coffee.size = CoffeeSize.SHORT;
+// * Any型 なんでも入るよ !なるべく使用しない
+var anything = true;
+anything = 'hello';
+anything = ['hello', 33, true];
+anything = {};
+anything.value = 'value';
+var banana = 'banana'; //? stringにも入っちゃう...
+banana = anything;
+// * Union型 複数の型を取り扱うことができる
+var unionType = 10;
+// unionType.toUpperCase(); //? Error
+unionType = "文字";
+unionType.toLocaleUpperCase();
+var unionTypeArray = [21, 'hello'];
+// * Literal 型 特定の決まった値のみを使用する
+var apple = 'apple';
+var appleConst = 'apple'; //? const だと自動的に Literal型 になる
+var clothSize = 'small'; //? Enumとの違いは こっちはただの文字列です
+var cloth = {
+    color: 'white',
+    size: clothSize //? smallしか受け付けられない
 };
