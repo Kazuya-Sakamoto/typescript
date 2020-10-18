@@ -21,16 +21,22 @@ console.log(fruits);
 var book = ['business', 1500, false];
 book.push(21); // ? Errorが出ない
 // console.log(book[3]); //? Error を出すよ 
-// * Enum 列挙型 特定のまとまったグループを宣言する
-var coffeeSize;
-(function (coffeeSize) {
-    coffeeSize["SHORT"] = "SHORT";
-    coffeeSize["TALL"] = "TALL";
-    coffeeSize["GRANDE"] = "GRANDE";
-    coffeeSize["VENTI"] = "VENTI";
-})(coffeeSize || (coffeeSize = {}));
+// * Enum型 列挙型 特定のまとまったグループを宣言する パスカルケースで記載
+// enum CoffeeSize {
+//   SHORT = 'SHORT',
+//   TALL = 'TALL',
+//   GRANDE = 'GRANDE',
+//   VENTI = 'VENTI'
+// }
+// ? 数字が入る
+var CoffeeSize;
+(function (CoffeeSize) {
+    CoffeeSize[CoffeeSize["SHORT"] = 0] = "SHORT";
+    CoffeeSize[CoffeeSize["TALL"] = 1] = "TALL";
+    CoffeeSize[CoffeeSize["GRANDE"] = 2] = "GRANDE";
+    CoffeeSize[CoffeeSize["VENTI"] = 3] = "VENTI";
+})(CoffeeSize || (CoffeeSize = {}));
 var coffee = {
     hot: true,
     size: coffeeSize.TALL
 };
-coffee.size = coffeeSize.SHORT;
