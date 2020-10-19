@@ -110,3 +110,17 @@ doubleAndHandle(21, doubleNumber => {
   return doubleNumber;
 })
 
+// * unknown型
+let unknownInput: unknown;
+let anyInput: any;
+let text: string;
+unknownInput = 'aaaa';
+unknownInput = 21;
+unknownInput = true;
+// text = unknownInput; //? error
+text = anyInput; //? error出ない
+if(typeof unknownInput === 'string') {
+  text = unknownInput;
+}
+
+
