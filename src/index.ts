@@ -115,7 +115,7 @@ let unknownInput: unknown;
 let anyInput: any;
 let text: string;
 unknownInput = 'aaaa';
-unknownInput = 21;
+unknownInput = 11;
 unknownInput = true;
 // text = unknownInput; //? error
 text = anyInput; //? error出ない
