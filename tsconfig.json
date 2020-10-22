@@ -74,6 +74,7 @@
     "src/index.ts",
     "src/comp.ts",
     "src/class.ts",
+    "src/interface.ts",
     // "Type/compiler.ts"
   ],
   // * 特定のファイルをコンパイラされるのを除く
