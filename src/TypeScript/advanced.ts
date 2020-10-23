@@ -22,12 +22,23 @@ type StringNumber = string | number;
 type Mix = NumberBoolean & StringNumber;
 
 
-function toUpperCase(x: string | number) {
+// * 関数のオーバーロード
+function toUpperCase(x: string): string;
+function toUpperCase(x: number): number;
+function toUpperCase(x: string | number): string | number {
   if (typeof x === 'string') {
     return x.toUpperCase();
   } 
   return ''
 }
+
+interface TemFunc {
+  (x: string): string;
+  (x: number): number;
+}
+// const upperHello: TemFunc = function (x: string | number) { return 0 };
+const upperHello = toUpperCase('hello');
+
 
 type NomadWorker = Engineer | Blogger;
 function describeProfile(nomadWorker: NomadWorker) {
@@ -71,6 +82,40 @@ function havePet(pet: Pet) {
 havePet(new Bird());
 
 // * 型アサーション
-const input = document.getElementById('input') as HTMLInputElement;
-input.value = 'initial input value';
+// const input = document.getElementById('input') as HTMLInputElement;
+// const input2 = document.getElementById('input')!; //? nullを弾く
+// input.value = 'initial input value';
+
+
+interface Designer {
+  name: string;
+  [index: string]: string; //? 全部この型にする
+}
+
+const designer: Designer = {
+  name: 'Kazuya'
+}
+
+interface DownloadedData {
+  id: number;
+  user?: {
+    name?: {
+      first: string;
+      last: string;
+    }
+  }
+}
+
+const downloadedData: DownloadedData = {
+  id: 1
+}
+console.log(downloadedData.user?.name?.first);
+const userData = downloadedData.user ?? 'no-user';
+type id = DownloadedData["user"];
+
+
+function advancedFn(...args: readonly [number, string, boolean, ...number[]]) {
+  console.log(args[0])
+}
+advancedFn(0,"aaa", false, 5, 5, 3, 10)
 

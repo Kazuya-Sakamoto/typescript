@@ -1,4 +1,5 @@
 "use strict";
+var _a, _b, _c;
 const quill = {
     name: 'Quill',
     role: 'front-end',
@@ -10,6 +11,8 @@ function toUpperCase(x) {
     }
     return '';
 }
+// const upperHello: TemFunc = function (x: string | number) { return 0 };
+const upperHello = toUpperCase('hello');
 function describeProfile(nomadWorker) {
     console.log(nomadWorker.name);
     if ('role' in nomadWorker) { //? in演算子
@@ -49,6 +52,15 @@ function havePet(pet) {
     }
 }
 havePet(new Bird());
-// * 型アサーション
-const input = document.getElementById('input');
-input.value = 'initial input value';
+const designer = {
+    name: 'Kazuya'
+};
+const downloadedData = {
+    id: 1
+};
+console.log((_b = (_a = downloadedData.user) === null || _a === void 0 ? void 0 : _a.name) === null || _b === void 0 ? void 0 : _b.first);
+const userData = (_c = downloadedData.user) !== null && _c !== void 0 ? _c : 'no-user';
+function advancedFn(...args) {
+    console.log(args[0]);
+}
+advancedFn(0, "aaa", false, 5, 5, 3, 10);
