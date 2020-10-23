@@ -64,3 +64,7 @@ function advancedFn(...args) {
     console.log(args[0]);
 }
 advancedFn(0, "aaa", false, 5, 5, 3, 10);
+const peter = {
+    name: 'Peter',
+    age: 38
+};

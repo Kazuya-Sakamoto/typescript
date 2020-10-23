@@ -119,3 +119,8 @@ function advancedFn(...args: readonly [number, string, boolean, ...number[]]) {
 }
 advancedFn(0,"aaa", false, 5, 5, 3, 10)
 
+const peter = {
+  name: 'Peter',
+  age: 38
+} as const;
+type PeterType = typeof peter;

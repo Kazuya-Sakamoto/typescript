@@ -76,6 +76,7 @@
     "src/TypeScript/class.ts",
     "src/TypeScript/interface.ts",
     "src/TypeScript/advanced.ts",
+    "src/TypeScript/generics.ts",
   ],
   // * 特定のファイルをコンパイラされるのを除く
   "exclude": [
