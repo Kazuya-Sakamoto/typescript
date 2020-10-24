@@ -78,6 +78,7 @@
     "src/TypeScript/advanced.ts",
     "src/TypeScript/generics.ts",
     "src/TypeScript/decorator.ts",
+    "src/Todo/food-app.ts",
   ],
   // * 特定のファイルをコンパイラされるのを除く
   "exclude": [
