@@ -1,6 +1,6 @@
 function Logging(target: Function) {
   console.log('Logging...')
-  console.log(constructor);
+  // console.log(constructor);
 }
 
 // * インスタンス生成時 ではなく class定義時に読まれる

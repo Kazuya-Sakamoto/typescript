@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 function Logging(target) {
     console.log('Logging...');
-    console.log(constructor);
+    // console.log(constructor);
 }
 // * インスタンス生成時 ではなく class定義時に読まれる
 let User = class User {
