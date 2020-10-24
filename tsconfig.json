@@ -5,7 +5,7 @@
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
     "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
-    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "module": "ES6",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */ //* import {} from ''を使用する
     // "lib": [
     //   "ES6",
     //   "DOM"
@@ -71,14 +71,14 @@
   },
   // * 特定のファイルを指定してコンパイラされるようにする
   "include": [
-    "src/TypeScript/index.ts",
-    "src/TypeScript/comp.ts",
-    "src/TypeScript/class.ts",
-    "src/TypeScript/interface.ts",
-    "src/TypeScript/advanced.ts",
-    "src/TypeScript/generics.ts",
-    "src/TypeScript/decorator.ts",
-    "src/TypeScript/food-app.ts",
+    // "src/TypeScript/index.ts",
+    // "src/TypeScript/comp.ts",
+    // "src/TypeScript/class.ts",
+    // "src/TypeScript/interface.ts",
+    // "src/TypeScript/advanced.ts",
+    // "src/TypeScript/generics.ts",
+    // "src/TypeScript/decorator.ts",
+    "src/food-app",
   ],
   // * 特定のファイルをコンパイラされるのを除く
   "exclude": [
