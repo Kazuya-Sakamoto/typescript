@@ -1,36 +1,28 @@
+"use strict";
 // * 型注釈 型推論
-let hasValue: boolean = true;
+let hasValue = true;
 let hasKey = false;
-
-let count: number = 10;
-let float: number = 3.14;
-let negative: number = -0.54;
-let single: string = 'hello';
-let double: string = "hello";
-let back: string = `hello`;
-
+let count = 10;
+let float = 3.14;
+let negative = -0.54;
+let single = 'hello';
+let double = "hello";
+let back = `hello`;
 // * オブジェクト
-const person: {
-  name: string,
-  age: number
-} = {
-  name: 'Kazuya',
-  age: 24
-}
+const person = {
+    name: 'Kazuya',
+    age: 24
+};
 console.log(person.age);
-
 // * 配列
 const fruits = ['Apple', 'Banana', 'Grape', 1];
 const fruit = fruits[0];
 console.log(fruits);
-
 // * Tuple型 型の順序が決めたい場合
-const book: [string, number, boolean ] = ['business', 1500, false];
-book.push(21) // ? Errorが出ない
+const book = ['business', 1500, false];
+book.push(21); // ? Errorが出ない
 // console.log(book[3]); //? Error を出すよ 
-
 // const food: [string, number, boolean] = ['apple', 480, true]
-
 // * Enum型 列挙型 特定のまとまったグループを宣言する パスカルssケースで記載
 // enum CoffeeSize {
 //   SHORT = 'SHORT',
@@ -39,18 +31,18 @@ book.push(21) // ? Errorが出ない
 //   VENTI = 'VENTI'
 // }
 // ? 数字が入る
-enum CoffeeSize {
-  SHORT,
-  TALL,
-  GRANDE,
-  VENTI 
-}
+var CoffeeSize;
+(function (CoffeeSize) {
+    CoffeeSize[CoffeeSize["SHORT"] = 0] = "SHORT";
+    CoffeeSize[CoffeeSize["TALL"] = 1] = "TALL";
+    CoffeeSize[CoffeeSize["GRANDE"] = 2] = "GRANDE";
+    CoffeeSize[CoffeeSize["VENTI"] = 3] = "VENTI";
+})(CoffeeSize || (CoffeeSize = {}));
 const coffee = {
-  hot: true,
-  size: CoffeeSize.TALL
-}
+    hot: true,
+    size: CoffeeSize.TALL
+};
 coffee.size = CoffeeSize.SHORT;
-
 // enum Size {
 //   SMALL,
 //   MIDDLE,
@@ -61,91 +53,72 @@ coffee.size = CoffeeSize.SHORT;
 //   size: Size.SMALL
 // }
 // console.log(clothes)
-
 // * Any型 なんでも入るよ !なるべく使用しない
-let anything: any = true;
+let anything = true;
 anything = 'hello';
 anything = ['hello', 33, true];
 anything = {};
 anything.value = 'value';
 let banana = 'banana'; //? stringにも入っちゃう...
-banana = anything; 
-
+banana = anything;
 // * Union型 複数の型を取り扱うことができる
-let unionType: number | string = 10;
+let unionType = 10;
 // unionType.toUpperCase(); //? Error
 unionType = "文字";
 unionType.toLocaleUpperCase();
-let unionTypeArray: (number | string)[] = [21, 'hello']; 
-
+let unionTypeArray = [21, 'hello'];
 // let Food: (string | number)[] = [2000, 'apple'];
 // console.log(Food)
-
 // * Literal 型 特定の決まった値のみを使用する
-let apple: 'apple' = 'apple';
+let apple = 'apple';
 const appleConst = 'apple'; //? const だと自動的に Literal型 になる
-let clothSize: 'small' | 'medium' | 'large' = 'small'; //? Enumとの違いは こっちはただの文字列です
-
+let clothSize = 'small'; //? Enumとの違いは こっちはただの文字列です
 const cloth = {
-  color: 'white',
-  size: clothSize //? smallしか受け付けられない
-}
-
-// * typeエイリアス 型を複数変数のように宣言ができる
-type ClothSize = 'small' | 'medium' | 'large';
-
-
+    color: 'white',
+    size: clothSize //? smallしか受け付けられない
+};
 // *  関数に型をつける
 // ? parameter は 型をつける必要がある
-function add(num1: number, num2: number): number {
-  return num1 + num2;
+function add(num1, num2) {
+    return num1 + num2;
 }
 add(3, 2);
-
 // * void型 何も返さない
-function sayHello(): void {
-  console.log('Void型');
-  // return; undefinedが必要ない
+function sayHello() {
+    console.log('Void型');
+    // return; undefinedが必要ない
 }
 console.log(sayHello()); //? undefined で返る
-let tmp: undefined; //? 基本的には使用しない
-
-
+let tmp; //? 基本的には使用しない
 // * undefined と null 違い null も undefinedも入る
-let tmpNull: null = null; 
-
+let tmpNull = null;
 // * 関数の型注釈
-const anotherAdd: (n1: number, n2: number) => number = add; //? =>が違い
-const doubleNumber: (num: number) => number = num => num * 2;
-
+const anotherAdd = add; //? =>が違い
+const doubleNumber = num => num * 2;
 // * callback 関数
-function doubleAndHandle(num: number, cb: (num: number) => number): void {
-  const doubleNumber = cb(num * 2);
-  console.log(doubleNumber);
+function doubleAndHandle(num, cb) {
+    const doubleNumber = cb(num * 2);
+    console.log(doubleNumber);
 }
 doubleAndHandle(21, doubleNumber => {
-  return doubleNumber;
-})
-
-function doubleCount(num: number, count: (num: number) => number):void {
-  const doubleNumber = count(num * 2);
-  console.log(doubleNumber);
+    return doubleNumber;
+});
+function doubleCount(num, count) {
+    const doubleNumber = count(num * 2);
+    console.log(doubleNumber);
 }
 doubleCount(100, doubleNumbers => {
-  return doubleNumbers;
-})
-
+    return doubleNumbers;
+});
 // * unknown型
-let unknownInput: unknown;
-let anyInput: any;
-let text: string;
+let unknownInput;
+let anyInput;
+let text;
 unknownInput = 'aaaa';
 unknownInput = 11;
 unknownInput = true;
 // text = unknownInput; //? error
 text = anyInput; //? error出ない
-if(typeof unknownInput === 'string') {
-  text = unknownInput;
+if (typeof unknownInput === 'string') {
+    text = unknownInput;
 }
-
-

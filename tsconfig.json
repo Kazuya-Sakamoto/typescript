@@ -71,13 +71,14 @@
   },
   // * 特定のファイルを指定してコンパイラされるようにする
   "include": [
-    // "src/TypeScript/index.ts",
+    "src/TypeScript/index.ts",
     // "src/TypeScript/comp.ts",
     // "src/TypeScript/class.ts",
     // "src/TypeScript/interface.ts",
     // "src/TypeScript/advanced.ts",
     // "src/TypeScript/generics.ts",
     // "src/TypeScript/decorator.ts",
+    "src/TypeScript/practiceClass.ts",
     "src/food-app",
   ],
   // * 特定のファイルをコンパイラされるのを除く
