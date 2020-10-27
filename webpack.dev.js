@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',  //* or production mode
   entry: './src/food-app/main.ts', //? ここからStartする
   output: {
     filename: 'bundle.js',
