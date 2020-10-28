@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',  //* or production mode
-  entry: './src/food-app/main.ts', //? ここからStartする
+  entry: './src/TypeScript/library.ts', //? ここからStartする
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),

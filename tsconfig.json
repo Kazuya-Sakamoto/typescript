@@ -12,8 +12,8 @@
     // ],                                     //* 使用するライブラリー 例)型推論してあらゆるメソッドを使用できることを止めれる
     // "allowJs": true,                       /* Allow javascript files to be compiled. */ //* javaScriptもコンパイラさせる
     // "checkJs": true,                       /* Report errors in .js files. */ //* allowJsと並行して利用する javaScriptもErrorを教えてくれる
-    // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
-    // "declaration": true,                   /* Generates corresponding '.d.ts' file. */ //* 型定義ファイルを作成する
+    "jsx": "react",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    "declaration": true,                   /* Generates corresponding '.d.ts' file. */ //* 型定義ファイルを作成する
     // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */ //* 型定義ファイルを作成する
     // "sourceMap": true,                     /* Generates corresponding '.map' file. */ //* ブラウザでtsファイルを見たい時に使用する
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
@@ -44,7 +44,7 @@
     // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
 
     /* Module Resolution Options */
-    // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */ //* node or classic(自分のファイルだけみる) を使用できる node_modules をみに行くようになる
     // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
     // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
@@ -70,22 +70,26 @@
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
   // * 特定のファイルを指定してコンパイラされるようにする
-  "include": [
-    "src/TypeScript/index.ts",
-    // "src/TypeScript/comp.ts",
-    // "src/TypeScript/class.ts",
-    // "src/TypeScript/interface.ts",
-    // "src/TypeScript/advanced.ts",
-    // "src/TypeScript/generics.ts",
-    // "src/TypeScript/decorator.ts",
-    "src/TypeScript/practiceClass.ts",
-    "src/food-app",
-  ],
+  // "include": [
+  //   "src/TypeScript/index.ts",
+  //   // "src/TypeScript/comp.ts",
+  //   // "src/TypeScript/class.ts",
+  //   // "src/TypeScript/interface.ts",
+  //   // "src/TypeScript/advanced.ts",
+  //   // "src/TypeScript/generics.ts",
+  //   // "src/TypeScript/decorator.ts",
+  //   "src/TypeScript/practiceClass.ts",
+  //   "src/food-app",
+  // ],
   // * 特定のファイルをコンパイラされるのを除く
   "exclude": [
     // "Type/compiler.ts",
     // "**/compiler.ts", //? ワイルドカード
     // "*.spec.ts", //? ある拡張子はしないってできる
     "node_modules"
+  ],
+  "file": [
+    "./src/TypeScript/library.ts",
+    "./src/TypeScript/lodash.d.ts"
   ]
 }
